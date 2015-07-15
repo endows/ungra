@@ -3,16 +3,15 @@ Router.configure({
   loadingTemplate: 'loading'
 });
 
-Router.route('/', {name: 'home', controller: 'MainController'});
-Router.route('/school', {name: 'school_listView', controller: 'MainController'});
-Router.route('/school/:_id', {name: 'post_listView', controller: 'MainController'});
+Router.route('/', function () {
+  this.render('home');
+});
 
-MainController = RouteController.extend({
-  action: function() {
-  	this.render('home', {
-	    data: function () {
-	      return { posts: ['post red', 'post blue'] }
-	    }
-  	});
-  }
+Router.route('/school', function () {
+  this.render('school_listView');
+});
+
+Router.route('/school/:_id', function () {
+  Session.set('school_id',this.params._id)
+  this.render('post_listView');
 });

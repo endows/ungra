@@ -1,3 +1,24 @@
 <template name="post_listView">
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class='row'>
+        <div class='col-md-12'>
+          <h1>{{school.name}}</h1>
+          <form id='postForm'>
+            <input class='form-control' placeholder="Enterで発信">
+          </form>
+          <div class='list-group'>
+            {{#each posts}}
+            <div class='list-group-item'>
+              <h4>
+                {{body}}
+              </h4>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </template>
