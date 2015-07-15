@@ -1,0 +1,14 @@
+<template name="home">
+  <div class="container">
+    <div class="jumbotron">
+      <h2><small>学校裏サイト</small></h2>
+      <h1>アンダーグラウンド</h1>
+      <h3><small>本音で学校トーク</small></h3>
+      <button class="btn btn-danger" type="button">入室する</button>
+      <button class="btn btn-default" type="button">やめる</button>
+      {{#if myAppVariable}}
+      <h3>{{myAppVariable}}</h3>
+      {{/if}}
+    </div>
+  </div>
+</template>
