@@ -1,6 +1,6 @@
 Template.post_listView.helpers({
   posts:function(){
-    return Post.find({school_id:Session.get('school_id')})
+    return Post.find({school_id:Session.get('school_id')}).fetch().reverse()
   },
   school:function(){
     return School.findOne(Session.get('school_id'))
