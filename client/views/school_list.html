@@ -3,10 +3,25 @@
     <div class="jumbotron">
       <div class='row'>
         <div class='col-md-12'>
-          <h1>学校リスト</h1>
+          <form id='schoolForm' class='form-inline'>
+            <input class='form-control' placeholder="学校名">
+            <button class='btn btn-primary'>作成</button>
+          </form>
+          <div class='list-group'>
+            {{#each schools}}
+            <div class='list-group-item'>
+              <a href='/school/{{_id}}'>
+                <h4>
+                  {{name}}
+                </h4>
+              </a>
 
+            </div>
+            {{/each}}
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </template>
